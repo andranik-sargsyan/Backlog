@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backlog</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="container">
+        <div id="controls">
+            <h5>Name</h5>
+            <input type="text" id="txt-name" />
+
+            <h5>Description</h5>
+            <textarea id="txt-description"></textarea>
+
+            <h5>Priority</h5>
+            <select id="ddl-priority">
+                <option>---</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <br />
+            <br />
+
+            <input type="button" id="btn-add" value="Add" />
+        </div>
+        <div id="backlog">
+            <div class="section">
+                <div class="heading">
+                    <h4>To Do</h4>
+                </div>
+                <div class="area" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="section">
+                <div class="heading">
+                    <h4>In Progress</h4>
+                </div>
+                <div class="area" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="section">
+                <div class="heading">
+                    <h4>Done</h4>
+                </div>
+                <div class="area" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

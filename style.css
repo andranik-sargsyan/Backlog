@@ -1,0 +1,81 @@
+﻿/*Global*/
+#container {
+    height: 700px;
+    width: 1280px;
+    background-color: #ccc;
+    margin: 20px auto;
+    display: flex;
+    padding: 10px;
+}
+
+/*Controls*/
+#controls {
+    width: 20%;
+}
+
+#ddl-priority > option:nth-of-type(2) {
+    background-color: yellow;
+}
+
+#ddl-priority > option:nth-of-type(3) {
+    background-color: orange;
+}
+
+#ddl-priority > option:nth-of-type(4) {
+    background-color: red;
+}
+
+/*Backlog*/
+#backlog {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+div.section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+div.heading {
+    height: 50px;
+    text-align: center;
+}
+
+div.area {
+    flex: 1;
+    border: dashed 1px black;
+    margin: 5px;
+}
+
+div.task {
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin: 3px;
+    text-align: center;
+    user-select: none;
+    cursor: move;
+    position: relative;
+}
+
+    div.task.low {
+        background-color: yellow;
+    }
+
+    div.task.medium {
+        background-color: orange;
+    }
+
+    div.task.high {
+        background-color: red;
+    }
+
+    div.task > span {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    }
