@@ -24,21 +24,23 @@
             <br />
 
             <input type="button" id="btn-add" value="Add" />
+            <input type="button" class="hidden" id="btn-save" value="Save" />
+            <input type="button" class="hidden" id="btn-cancel" value="Cancel" />
         </div>
         <div id="backlog">
-            <div class="section">
+            <div class="section" data-name="to-do">
                 <div class="heading">
                     <h4>To Do</h4>
                 </div>
                 <div class="area" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
-            <div class="section">
+            <div class="section" data-name="in-progress">
                 <div class="heading">
                     <h4>In Progress</h4>
                 </div>
                 <div class="area" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
-            <div class="section">
+            <div class="section" data-name="done">
                 <div class="heading">
                     <h4>Done</h4>
                 </div>

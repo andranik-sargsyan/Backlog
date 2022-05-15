@@ -8,6 +8,10 @@
     padding: 10px;
 }
 
+.hidden {
+    display: none;
+}
+
 /*Controls*/
 #controls {
     width: 20%;
@@ -61,21 +65,33 @@ div.task {
     position: relative;
 }
 
-    div.task.low {
+    div.task[data-priority='low'] {
         background-color: yellow;
     }
 
-    div.task.medium {
+    div.task[data-priority='medium'] {
         background-color: orange;
     }
 
-    div.task.high {
+    div.task[data-priority='high'] {
         background-color: red;
     }
 
     div.task > span {
         position: absolute;
-        right: 5px;
         top: 5px;
         cursor: pointer;
+        font-size: 12px;
     }
+
+        div.task > span.edit {
+            right: 25px;
+        }
+
+        div.task > span.remove {
+            right: 5px;
+        }
+
+            div.task > span.remove.disabled {
+                opacity: 0.25;
+            }
