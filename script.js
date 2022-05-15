@@ -58,19 +58,16 @@ btnCancel.addEventListener("click", () => {
 function addTask(section, name, description, priority) {
     let task = document.createElement("div");
 
-    task.classList.add("task");
-    task.draggable = true;
-    task.setAttribute("ondragstart", "drag(event)");
-    task.setAttribute("data-priority", priority)
-    task.id = `task-${currentTaskID++}`;
-    task.innerHTML = `
-        <h5>${name}</h5>
-        <div>${description}</div>
-        <span class="edit" onclick="edit(this.parentElement)">✏️</span>
-        <span class="remove" onclick="remove(this.parentElement)">❌</span>
-    `;
-
     divBacklog.querySelector(`div.section[data-name=${section}] > div.area`).appendChild(task);
+
+    task.outerHTML = `
+        <div class="task" draggable="true" ondragstart="drag(event)" data-priority="${priority}" id="task-${currentTaskID++}">
+            <h5>${name}</h5>
+            <div>${description}</div>
+            <span class="edit" onclick="edit(this.parentElement)">✏️</span>
+            <span class="remove" onclick="remove(this.parentElement)">❌</span>
+        </div>
+    `;
 }
 
 function clear() {
@@ -179,17 +176,3 @@ function drop(ev) {
 //Init
 
 init();
-
-
-//2. make sections also dynamic
-//3. cache div.area also and explain
-//4. implement localStorage
-//5. edit also?
-
-//task.outerHTML = `
-//        <div class="task" data-priority="${priority}" draggable="true" ondragstart="drag(event)" id="task-${currentTaskID++}">
-//            <h5>${name}</h5>
-//            <div>${description}</div>
-//            <span onclick="remove(this.parentElement)">X</span>
-//        </div>
-//    `;
